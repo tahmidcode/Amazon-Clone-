@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://fonts.cdnfonts.com/css/amazon-ember" rel="stylesheet">
+    <style>
+        @import url('https://fonts.cdnfonts.com/css/amazon-ember');
+        *{
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            background: rgb(255,10,41);
+background: linear-gradient(180deg, rgba(255,10,41,1) 35%, rgba(186,175,175,1) 58%);
+        }
+        .topnav{
+            width: 98.7%;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            background: rgb(0,57,25);
+            background: linear-gradient(90deg, rgba(0,57,25,1) 0%, rgba(0,121,69,1) 56%);
+            padding-left: 20px;
+            /* gap: 20px; */
+            margin: 0px;
+            font-size: 13px;
+        }
+        .log{
+            align-content: center;
+            padding-top: 10px;
+            padding-right: 20px;
+        }
+        .log:hover{
+            border: 1px solid white;
+        }
+        .delivery{
+            text-decoration: none;
+            color: white;
+            display: inline-block;
+            /* padding-left: 25px; */
+            
+        }
+        .delivery:hover{
+            border: 1px solid white;
+        }
+        .search{
+            height: 37px;
+            width: 855px;
+            border: none;
+            display: flex;
+            box-sizing: border-box;
+            border-radius: 5px;
+            margin-left: 25px;
+            /* background-color: #fff; */
+            justify-content: center;
+            align-items: center;
+        }
+        select{
+            width: 45px;
+            height: 37px;
+            border-top-left-radius: 5px;
+            border-bottom-left-radius: 5px;
+            font-size: 12px;
+            align-content: center;
+            text-align: center;
+            color: #4a4a4a;
+            background-color: rgb(172, 170, 170);
+        }
+        .search:hover{
+            box-shadow: 0 0 20px rgb(33, 33, 33);
+        }
+        .sm{
+            text-decoration: none;
+            color: rgb(0, 0, 0);
+            font-size: 15px;
+            background-color: #949292;
+            align-content: center;
+        }
+        .sm:hover{
+            border: px solid white;
+        }
+        button{
+            background-color: rgb(229, 4, 143);
+            border: none;
+            height: 37px;
+            width: 40px;
+            border-bottom-right-radius: 5px;
+            border-top-right-radius: 5px;
+            
+        }
+        .sign{
+            text-decoration: none;
+            color: white;
+            /* font-size: 20px; */
+            margin-left: 25px;
+            padding: 4px;
+        }
+        .sign:hover{
+            border: 1px solid white;
+        }
+        .country{
+            text-decoration: none;
+            color: white;
+            font-size: 18px;
+            font-family: serif;
+            margin-left: 20px;
+            padding: 4px;
+        }
+        .country:hover{
+            border: 1px solid white;
+        }
+        .return{
+            text-decoration: none;
+            color: white;
+            margin-left: 25px;
+            padding: 4px;
+        }
+        .return:hover{
+            border: 1px solid white;
+        }
+        .cart{
+            text-decoration: none;
+            color: white;
+            font-size: 18px;
+            margin-left: 22px;
+            padding: 4px;
+        }
+        .cart:hover{
+            border: 1px solid white;
+        }
+        .midnav{
+            height: 40px;
+            width: 98.7%;
+            display: flex;
+            align-items: center;
+            padding-left: 20px;
+            background: rgb(13,90,78);
+            background: linear-gradient(90deg, rgba(13,90,78,1) 0%, rgba(24,78,56,1) 60%);
+            /* font-family: serif; */
+            font-size: 15px;
+            font-weight: bold;
+
+        }
+        .all{
+            text-decoration: none;
+            color: white;
+            padding: 5px;
+        }
+        .all:hover{
+            border: 1px solid white;
+        }
+        .deals{
+            text-decoration: none;
+            color: white;
+            margin-left: 20px;
+            padding: 5px;
+        }
+        .deals:hover{
+            border: 1px solid white;
+        }
+        .cs{
+            text-decoration: none;
+            color: white;
+            margin-left: 20px;
+            padding: 5px;
+        }
+        .cs:hover{
+            border: 1px solid white;
+        }
+        .registry{
+            text-decoration: none;
+            color: white;
+            margin-left: 20px;
+            padding: 5px;
+        }
+        .registry:hover{
+            border: 1px solid white;
+        }
+        .gc{
+            text-decoration: none;
+            color: white;
+            margin-left: 20px;
+            padding: 5px;
+        }
+        .gc:hover{
+            border: 1px solid white;
+        }
+        .sell{
+            text-decoration: none;
+            color: white;
+            margin-left: 20px;
+            padding: 5px;
+        }
+        .sell:hover{
+            border: 1px solid white;
+        }
+        .container{
+            width: 98%;
+            height: 100%;
+            background-image: url(img/bgimg.jpg);
+            background-size: 1509px;
+            background-repeat: no-repeat;
+            background-blend-mode: lighten;
+            justify-content: center;
+            margin-left: 15px;
+            display: grid;
+            grid-template-columns: 350px 350px 350px 350px;
+            grid-template-rows: 350px 300px 300px 300px 300px 300px 300px;
+            gap: 20px;
+            text-align: center;
+        
+        }
+        .add{
+            grid-area: 1/1/2/5;
+            /* background-image: url(img/bgimg.jpg);
+            background-size: cover; */
+            display: grid;
+            grid-template-columns: 100%;
+            grid-template-rows: 100px 100px 80px 40px;
+        }
+        .descrip{
+            grid-area: 4/1/5/2;
+            text-align: center;
+            color: black;
+            font-size: 15px;
+            font-weight: 400;
+            align-content: center;
+            background-color: white;
+        }
+        .des{
+            text-decoration: none;
+            color: rgb(80, 141, 158);
+        }
+        .pd1{
+            grid-area: 2/1/3/2;
+            background-color: white;
+        }
+        .pd1:hover{
+            transform: translateY(-10px);
+        }
+        .pd2{
+            grid-area: 2/2/3/3;
+            background-color: white;
+        }
+        .pd2:hover{
+            transform: translateY(-10px);
+        }
+        .pd3{
+            grid-area: 2/3/3/4;
+            background-color: white;
+        }
+        .pd3:hover{
+            transform: translateY(-10px);
+        }
+        .pd4{
+            grid-area: 2/4/3/5;
+            background-color: white;
+        }
+        .pd4:hover{
+            transform: translateY(-10px);
+        }
+        .pd5{
+            grid-area: 3/1/4/2;
+            background-color: white;
+        }
+        .pd5:hover{
+            transform: translateY(-10px);
+        }
+        .pd6{
+            grid-area: 3/2/4/3;
+            background-color: white;
+        }
+        .pd6:hover{
+            transform: translateY(-10px);
+        }
+        .pd7{
+            grid-area: 3/3/4/4;
+            background-color: white;
+        }
+        .pd7:hover{
+            transform: translateY(-10px);
+        }
+        .pd8{
+            grid-area: 3/4/4/5;
+            background-color: white;
+        }
+        .pd8:hover{
+            transform: translateY(-10px);
+        }
+        .pd17{
+            grid-area: 4/1/5/5;
+            background-color: white;
+            animation-name: slide;
+            animation-duration: 10s;
+            animation-timing-function: ease-in-out;
+            animation-iteration-count: infinite;
+        }
+        @keyframes slide {
+           0%{
+                margin-left: 0%;
+            }
+            25%{
+               margin-left: 5%;
+            }
+            50%{
+                margin: 0%;
+            }
+            75%{
+                margin-right: 5%;
+            }
+            100%{margin-right: 0%;
+
+            }
+        }
+        .pd9{
+            grid-area: 5/1/6/2;
+            background-color: white;
+        }
+        .pd10{
+            grid-area: 5/2/6/3;
+            background-color: white;
+        }
+        .pd11{
+            grid-area: 5/3/6/4;
+            background-color: white;
+        }
+        .pd12{
+            grid-area: 5/4/6/5;
+            background-color: white;
+        }
+        .pd13{
+            grid-area: 6/1/7/2;
+            background-color: white;
+        }
+        .pd14{
+            grid-area: 6/2/7/3;
+            background-color: white;
+        }
+        .pd15{
+            grid-area: 6/3/7/4;
+            background-color: white;
+        }
+        .pd16{
+            grid-area: 6/4/7/5;
+            background-color: white;
+        }
+        .pd18{
+            grid-area: 7/1/8/5;
+            background-color: white;
+            animation: scroll 10s infinite ease-in-out;
+        }
+        @keyframes scroll 
+        {
+           0%{
+                margin-left: 0%;
+            }
+            25%{
+               margin-left: 5%;
+            }
+            50%{
+                margin: 0%;
+            }
+            75%{
+                margin-right: 5%;
+            }
+            100%{margin-right: 0%;
+
+            }
+        }   
+        .bottomnav{
+            height: 200px;
+            background-color: white;
+            margin-top: 20px;
+            font-family: ;
+            text-align: center;
+            justify-content: center;
+            align-content: center;
+            cursor: pointer;
+        }
+        .bottom{
+            width: 230px;
+            border-radius: 5px;
+            background: rgb(244,183,22);
+            background: linear-gradient(0deg, rgba(244,183,22,1) 33%, rgba(238,208,128,1) 100%);
+        }
+        .bottom:hover{
+            padding-right: 24px;
+  padding-left:8px;
+        }
+        .scrollup{
+            height: 50px;
+            text-align: center;
+            align-content: center;
+            background-color: #43597a;
+            color: white;
+            cursor: pointer;
+        }
+        .foot{
+            height: 400px;
+            background-color:  #314158;
+            color: white;
+            display: grid;
+            grid-template-columns: 90px 90px 90px 90px 90px 90px 90px ;
+            grid-template-rows: 90px 90px 90px;
+            font-size: 10px;
+            gap: 20px;
+            justify-content: center;
+            align-content: center;
+        }
+        .ft1{
+            grid-area: 1/1/2/2,
+        }
+        .ft2{
+            grid-area: 1/2/2/3;
+        }
+        .ft3{
+            grid-area: 1/3/2/4;
+        }
+        .ft2{
+            grid-area: 1/4/2/5;
+        }
+        .ft2{
+            grid-area: 1/5/2/6;
+        }
+        .ft2{
+            grid-area: 1/6/2/7;
+        }
+        .ft2{
+            grid-area: 1/7/2/8;
+        }
+        footer{
+            height: 100px;
+            background-color:  #314158;
+            color: white;
+            text-align: center;
+            font-size: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="topnav">
+        <a class="log" href="#logo"><img src="img/logo.png" alt="" height="35px" width="auto"></a>
+        <a href="https://maps.app.goo.gl/XiVV4M6sT6BgLWtr5" class="delivery"><p><img src="img/location.png" alt="" height="30px"><p><span>Deliver to <br> <b>India</b></span></a>
+        <div class="search"><select><option>All</option></select><input type="text" placeholder="Search Amazon" style="height: 34px; width: 785px;  ">
+            <button><img src="img/search.png" alt=""height="20px" width="20px"></button></div>
+        <a href="#India" class="country"><img src="img/flag.jpg" alt="" height="10px" width="15px"><b>IN</b></a>
+        <a href="#Signin" class="sign">Hello, Sign in<br><b>Accounts & Lists</b></a>
+        <a href="#returns" class="return">Returns <br><b>& Orders</b></a>
+        <a href="#add" class="cart"><img src="img/cart.png" alt="" height="30px" width="40px"> <b>Cart</b></a>
+    </div>
+    <div class="midnav">
+        <a href="#all" class="all">All</a>
+        <a href="" class="deals">Today's Deals</a>
+        <a href="" class="cs">Customer Service</a>
+        <a href="" class="registry">Registry</a>
+        <a href="" class="gc">Gift Card</a>
+        <a href="" class="sell">Sell</a>
+    </div>
+    <div class="container">
+        <div class="add"><div class="descrip"><p>You are on amazon.com. You can also shop on Amazon India for millions of products with fast local delivery. <a class="des" href="https://www.amazon.in/">Click here to go to amazon.in</a></p></div></div>
+        <div class="pd1"><h2>Treat yourself. Shop 11.11 deals</h2> <img src="img/product/p9.jpg" alt=""  width="330px" height="200px"> <br><a href="#none">See more</a> </div>
+        <div class="pd2"><h2>Gaming accessories</h2> <img src="img/product/p1.png" alt=""  width="330px" height="220px"> <br><a href="#none">See more</a></div>
+        <div class="pd3"><h2>Shop for your home essentials</h2><img src="img/product/p2.png" alt=""  width="330px" height="220px"> <br><a href="#none">Discover more in home</a></div>
+        <div class="pd4"><h2>Shop deals in Fashion</h2><img src="img/product/p3.png" alt=""  width="330px" height="220px"> <br><a href="#none">See all details</a></div>
+        <div class="pd7"><h2>Get your game on</h2><img src="img/product/p4.png" alt=""  width="330px" height="220px"> <br><a href="#none">Shop the latest from home</a></div>
+        <div class="pd5"><h2>Toys Under $25</h2><img src="img/product/p8.png" alt=""  width="330px" height="220px"> <br><a href="#none">Shop now</a></div>
+        <div class="pd6"><h2>Top categories in Kitchen appliances</h2><img src="img/product/p5.png" alt=""  width="330px" height="200px"> <br><a href="#none">Explore all products in Kitchen</a></div>
+        <div class="pd8"><h2>Refresh your space</h2><img src="img/product/p6.png" alt=""  width="330px" height="220px"> <br><a href="#none">See more</a></div>
+        <div class="pd9"><h2></h2></div>
+        <div class="pd10"></div>
+        <div class="pd11"></div>
+        <div class="pd12"></div>
+        <div class="pd13"></div>
+        <div class="pd14"></div>
+        <div class="pd15"></div>
+        <div class="pd16"></div>
+        <div class="pd17"><h2>Top picks for India</h2><img src="img/product/p10.png" alt=""  width="1380px" height="240px"></div>
+        <div class="pd18"><h2>Most wished for in Video Games</h2><img src="img/product/p12.png" alt=""  width="1380px" height="240px"></div>
+    </div>
+    <div class="bottomnav">
+        <hr>
+        <h2>See personalized recommendations</h2>
+        <button class="bottom"><b>Sign in</b></button>
+        <p>New customer? <a href="#start">Start here</a>.</p> <hr>
+    </div>
+    <div class="scrollup">Back to top</div>
+    <div class="foot">
+        <div class="ft1"><h4>Amazon music</h4>Stream millions of songs</div>
+        <div class="ft2"><h4>Amazon Ads</h4>Reach Customers wherever they spend their time</div>
+        <div class="ft3"><h4>6pm</h4>Lorem ipsum dolor sit amet.</div>
+        <div class="ft4"><h4>ABE Books</h4>Reach Customers wherever they spend their time</div>
+        <div class="ft5"><h4>ACX</h4>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</div>
+        <div class="ft6"><h4>Sell On Amazon</h4>Lorem ipsum dolor sit amet consectetur adipisicing.</div>
+        <div class="ft7"><h4>Veego</h4>Lorem, ipsum dolor sit amet consectetur adipisicing.</div>
+        <div class="ft8"><h4>Amazon Business</h4>Reach Customers wherever they spend their time</div>
+        <div class="ft9"><h4>AmazonGlobal</h4>Lorem ipsum dolor sit amet consectetur adipisicing.</div>
+        <div class="ft10"><h4>Home Services</h4>Reach Customers wherever they spend their time</div>
+        <div class="ft11"><h4>AmazonWeb Services</h4>Lorem ipsum, dolor sit amet consectetur adipisicing.</div>
+        <div class="ft12"><h4>Audible</h4>Lorem ipsum dolor sit amet consectetur adipisicing.</div>
+        <div class="ft13"><h4>Box OfficeMojo</h4>Reach Customers wherever they spend their time</div>
+        <div class="ft14"><h4>GoodReads</h4>Lorem, ipsum dolor sit amet consectetur adipisicing.</div>
+        <div class="ft15"><h4>IMDb</h4>Lorem, ipsum dolor sit amet consectetur adipisicing.</div>
+        <div class="ft16"><h4>IMDb pro</h4>Lorem, ipsum dolor sit amet consectetur adipisicing.</div>
+        <div class="ft17"><h4>Kindle Direct Publishing</h4>Lorem, ipsum dolor sit amet consectetur adipisicing.</div>
+        <div class="ft18"><h4>Prime Video Direct</h4>Lorem, ipsum dolor sit amet consectetur adipisicing.</div>
+        <div class="ft19"><h4>ShopBop</h4>Lorem, ipsum dolor sit amet consectetur adipisicing.</div>
+        <div class="ft20"><h4>Woot</h4>Lorem, ipsum dolor sit amet consectetur adipisicing.</div>
+        <div class="ft21"><h4>Zappos</h4>Lorem, ipsum dolor sit amet consectetur adipisicing.</div>
+        
+        
+        
+    </div>
+    <footer>Conditions of Use  Privacy Notice  Consumer Health Data Privacy Disclosure  Your Ads Privacy Choices <br>
+        © 04/11/2024, Made By, Mr. Tahmid Hassan with HTML & CSS</footer>
+</body>
+</html>
